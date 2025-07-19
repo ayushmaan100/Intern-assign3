@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Verification Portal | VaultofCodes</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <!-- Link to our CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://vaultofcodes.site/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Starfield Background Layers -->
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="page-container">
+        <header class="site-header">
+            <img src="https://vaultofcodes.site/logo.png" alt="VaultofCodes Logo" class="logo">
+            <h1>VaultofCodes</h1>
+            <p>Internship Verification Portal</p>
+        </header>
+
+        <main>
+            <div class="verification-card">
+                <div class="card-content">
+                    <h2>Verify Your Internship</h2>
+                    <p class="instructions">Enter your email or internship ID to check your status.</p>
+                    
+                    <form id="verification-form">
+                        <div class="input-group">
+                            <i class="fa-solid fa-user-astronaut input-icon"></i>
+                            <input type="text" id="internship-id" placeholder="Email or Internship ID" required>
+                        </div>
+                        <button type="submit" id="verify-button">
+                            <span class="button-text">Verify</span>
+                            <div class="spinner"></div>
+                        </button>
+                    </form>
+                </div>
+                <div id="result-container" aria-live="polite"></div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>© <span id="year"></span> VaultofCodes - Empowering Future Coders 🚀</p>
+        </footer>
+    </div>
+
+    <!-- Link to our JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>

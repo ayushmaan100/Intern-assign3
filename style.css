@@ -1,0 +1,211 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --primary-color: #007BFF;
+  --primary-hover: #0056b3;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --pending-color: #ffc107;
+  --dark-text: #333;
+  --light-text: #f8f9fa;
+  --bg-light: #f4f7f6;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-light);
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+  /* Adding a subtle gradient background */
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+/* --- Header & Footer --- */
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+.site-header h1 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--dark-text);
+}
+
+.site-header p {
+  color: #6c757d;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #212529;
+  color: var(--light-text);
+  margin-top: auto;
+}
+
+/* --- Main Verification Card --- */
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.verification-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-content {
+  padding: 2.5rem;
+}
+
+.verification-card h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.instructions {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+/* --- Form Elements --- */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.sr-only { /* For accessibility */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+#internship-id {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#internship-id:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#verify-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#verify-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+#verify-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+#verify-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* --- Loading Spinner --- */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden by default */
+}
+
+#verify-button.loading .spinner {
+  display: block;
+}
+
+#verify-button.loading .button-text {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Result Display Card --- */
+#result-container {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.result-card {
+  padding: 1.5rem 2.5rem;
+  color: var(--light-text);
+  text-align: center;
+}
+
+.result-card.success { background-color: var(--success-color); }
+.result-card.error { background-color: var(--error-color); }
+.result-card.pending { background-color: var(--pending-color); color: var(--dark-text); }
+
+.result-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.result-card p {
+  margin: 0;
+}
